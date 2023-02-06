@@ -81,6 +81,13 @@
 //! # let dtb = create_fdt().unwrap();
 //! ```
 
+#![no_std]
+#![feature(error_in_core)]
+
+#[cfg(feature = "alloc")]
+#[macro_use]
+extern crate alloc;
+
 mod writer;
 
 pub use writer::Result as FdtWriterResult;
